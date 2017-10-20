@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="WebService">
+  <ConnectionProperties>
+    <Extension>XML</Extension>
+    <ConnectString>http://www.cbr.ru/scripts/XML_bic2.asp</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>9ed1275a-044c-49de-8525-0c514de11716</DataSourceID>
+</RptDataSource>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>NAV_Offsores</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@Switcher">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT *
+FROM (
+	SELECT 1, 'A', 'EUR', 100 union all
+	SELECT 2, 'A', 'EUR', 200 union all
+	SELECT 3, 'B', 'USD', 300 union all
+	SELECT 3, 'B', 'RUR', 300 union all
+	SELECT 3, 'B', 'USD', 300 union all
+	SELECT 3, 'B', 'USD', 300 union all
+	SELECT 3, 'B', 'EUR', 300 union all
+	SELECT 3, 'C', 'USD', 300 union all
+	SELECT 3, 'C', 'USD', 300 union all
+	SELECT 3, 'C', 'USD', 300 union all
+	SELECT 3, 'D', 'USD', 300 union all
+	SELECT 3, 'B', 'RUR', 300 union all
+	SELECT 3, 'B', 'USD', 300 union all
+	SELECT 3, 'B', 'USD', 300 union all
+	SELECT 4, 'B', 'USD', 400)
+AS SRC( EntryNo, D1, D2, Amount )
+ where
+	D1 in (@Switcher);</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="EntryNo">
+        <DataField>EntryNo</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="D1">
+        <DataField>D1</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="D2">
+        <DataField>D2</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Amount">
+        <DataField>Amount</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
