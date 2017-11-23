@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Reconciliation.WS">
+  <ConnectionProperties>
+    <Extension>XML</Extension>
+    <ConnectString>http://localhost:8091/Reconciliation</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>c9660c5c-e2a4-4d32-8e55-31c082d0e76d</DataSourceID>
+</RptDataSource>
