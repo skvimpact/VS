@@ -73,8 +73,8 @@ xcopy "$(AssemblyName).pdb" "C:\Reconciliation" /Y
 xcopy "$(AssemblyName).exe" "C:\Reconciliation" /Y
 
 
-xcopy "MDX Script Executor.dll" "C:\Reconciliation" /Y
-xcopy "MDX Script Executor.pdb" "C:\Reconciliation" /Y
+xcopy "Script Executor.dll" "C:\Reconciliation" /Y
+xcopy "Script Executor.pdb" "C:\Reconciliation" /Y
 
 xcopy "Reconciliation.Controller.dll" "C:\Reconciliation" /Y
 xcopy "Reconciliation.Controller.pdb" "C:\Reconciliation" /Y

@@ -1,31 +1,33 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace Reconciliation.DAL
 {
-    [DataContract(Namespace = "")]
     public class MeasureSet
     {
-        [DataMember]
+        static double delta = 0.009f;
+
         public double M1 { get; set; }
-        [DataMember]
         public double M2 { get; set; }
-        [DataMember]
         public double M3 { get; set; }
-        [DataMember]
         public double M4 { get; set; }
 
-        public MeasureSet(double M1 = 0, double M2 = 0, double M3 = 0, double M4 = 0)
+        public bool IsNull()
         {
-            this.M1 = M1;
-            this.M2 = M2;
-            this.M3 = M3;
-            this.M4 = M4;
+               
+            if (
+                 Math.Abs(M1) < delta
+              && Math.Abs(M2) < delta
+              && Math.Abs(M3) < delta
+              && Math.Abs(M4) < delta
+            )
+            {
+                return true;
+            }
+            return false;
         }
 
         public override bool Equals(Object obj)
-        {
-            double delta = 0.009f;
+        {            
             if (obj is MeasureSet && obj != null)
             {
                 MeasureSet temp = (MeasureSet)obj;

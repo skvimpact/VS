@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>sdsr_Local_XML</DataSourceReference>
+      <CommandText>&lt;Query&gt;
+&lt;XmlData&gt;
+&lt;?xml version="1.0"?&gt;
+&lt;Months&gt;
+  &lt;Month&gt;
+    &lt;ID&gt;1&lt;/ID&gt;
+    &lt;Name&gt;январь&lt;/Name&gt;
+  &lt;/Month&gt;
+  &lt;Month&gt;
+    &lt;ID&gt;2&lt;/ID&gt;
+    &lt;Name&gt;февраль&lt;/Name&gt;
+  &lt;/Month&gt;
+  &lt;Month&gt;
+    &lt;ID&gt;3&lt;/ID&gt;
+    &lt;Name&gt;март&lt;/Name&gt;
+  &lt;/Month&gt;
+  &lt;Month&gt;
+    &lt;ID&gt;4&lt;/ID&gt;
+    &lt;Name&gt;апрель&lt;/Name&gt;
+  &lt;/Month&gt;
+  &lt;Month&gt;
+    &lt;ID&gt;5&lt;/ID&gt;
+    &lt;Name&gt;май&lt;/Name&gt;
+  &lt;/Month&gt;
+  &lt;Month&gt;
+    &lt;ID&gt;6&lt;/ID&gt;
+    &lt;Name&gt;июнь&lt;/Name&gt;
+  &lt;/Month&gt;
+  &lt;Month&gt;
+    &lt;ID&gt;7&lt;/ID&gt;
+    &lt;Name&gt;июль&lt;/Name&gt;
+  &lt;/Month&gt;
+  &lt;Month&gt;
+    &lt;ID&gt;8&lt;/ID&gt;
+    &lt;Name&gt;август&lt;/Name&gt;
+  &lt;/Month&gt;
+  &lt;Month&gt;
+    &lt;ID&gt;9&lt;/ID&gt;
+    &lt;Name&gt;сентябрь&lt;/Name&gt;
+  &lt;/Month&gt;
+  &lt;Month&gt;
+    &lt;ID&gt;10&lt;/ID&gt;
+    &lt;Name&gt;октябрь&lt;/Name&gt;
+  &lt;/Month&gt;
+  &lt;Month&gt;
+    &lt;ID&gt;11&lt;/ID&gt;
+    &lt;Name&gt;ноябрь&lt;/Name&gt;
+  &lt;/Month&gt;
+  &lt;Month&gt;
+    &lt;ID&gt;12&lt;/ID&gt;
+    &lt;Name&gt;декабрь&lt;/Name&gt;
+  &lt;/Month&gt;
+&lt;/Months&gt;
+
+
+&lt;/XmlData&gt;
+&lt;/Query&gt;</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="ID">
+        <DataField>ID</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Name">
+        <DataField>Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

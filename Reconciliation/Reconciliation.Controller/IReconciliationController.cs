@@ -16,6 +16,18 @@ namespace Reconciliation.Controller
     {
         [OperationContract]
         [WebGet]
-        RecItem[] GetData(int year, int month);
+        string PrepareData(int year, int month);
+
+        [OperationContract]
+        [WebGet]
+        ReconciliationItem[] GetData(int year, int month);
+        
+        [OperationContract]
+        [WebGet]
+        ReconciliationItemCaption[] GetDataCaption();
+
+        [OperationContract]
+        [WebGet]
+        CashedDataInfo[] GetCashedDataInfo();
     }
 }

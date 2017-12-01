@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using MDX_Script_Executor;
+using Script_Executor;
 
 
 namespace Reconciliation.DAL

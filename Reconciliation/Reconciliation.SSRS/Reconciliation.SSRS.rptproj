@@ -6,8 +6,25 @@
       <Name>Reconciliation.WS.rds</Name>
       <FullPath>Reconciliation.WS.rds</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>sdsr_Local_XML.rds</Name>
+      <FullPath>sdsr_Local_XML.rds</FullPath>
+    </ProjectItem>
   </DataSources>
-  <DataSets />
+  <DataSets>
+    <ProjectItem>
+      <Name>sds_Months.rsd</Name>
+      <FullPath>sds_Months.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>sds_Years.rsd</Name>
+      <FullPath>sds_Years.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>sds_Defaults.rsd</Name>
+      <FullPath>sds_Defaults.rsd</FullPath>
+    </ProjectItem>
+  </DataSets>
   <Reports>
     <ProjectItem>
       <Name>GetData.rdl</Name>
@@ -21,9 +38,12 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetFolder>Reconciliation.SSRS</TargetFolder>
+        <TargetServerURL>http://nav-sql-bck/ReportServer</TargetServerURL>
+        <TargetFolder>Reconciliation</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
+        <OverwriteDataSources>true</OverwriteDataSources>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>
+        <OverwriteDatasets>true</OverwriteDatasets>
         <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
       </Options>
     </Configuration>

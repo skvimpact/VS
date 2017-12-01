@@ -1,18 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Reconciliation.DAL
+namespace TSQLExample.DAL
 {
-
-    public class Account : IComparable<Account>
+    public class Company : IComparable<Company>
     {
         public string name { get; set; }
 
-        public Account(string name)
+        public Company(string name)
         {
             this.name = name;
         }
 
-        public int CompareTo(Account other)
+        public int CompareTo(Company other)
         {
             if (other == null) return 1;
             return name.CompareTo(other.name);
@@ -20,9 +23,9 @@ namespace Reconciliation.DAL
 
         public override bool Equals(Object obj)
         {
-            if (obj is Account && obj != null)
+            if (obj is Company && obj != null)
             {
-                Account temp = (Account)obj;
+                Company temp = (Company)obj;
                 if (temp.name.Equals(this.name))
                 {
                     return true;

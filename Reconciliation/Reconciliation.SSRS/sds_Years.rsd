@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>sdsr_Local_XML</DataSourceReference>
+      <CommandText>&lt;Query&gt;
+&lt;XmlData&gt;
+&lt;?xml version="1.0"?&gt;
+&lt;Years&gt;
+  &lt;Year&gt;
+    &lt;ID&gt;2014&lt;/ID&gt;
+  &lt;/Year&gt;
+  &lt;Year&gt;
+    &lt;ID&gt;2015&lt;/ID&gt;
+  &lt;/Year&gt;
+  &lt;Year&gt;
+    &lt;ID&gt;2016&lt;/ID&gt;
+  &lt;/Year&gt;
+  &lt;Year&gt;
+    &lt;ID&gt;2017&lt;/ID&gt;
+  &lt;/Year&gt;
+  &lt;Year&gt;
+    &lt;ID&gt;2018&lt;/ID&gt;
+  &lt;/Year&gt;
+  &lt;Year&gt;
+    &lt;ID&gt;2019&lt;/ID&gt;
+  &lt;/Year&gt;
+  &lt;Year&gt;
+    &lt;ID&gt;2020&lt;/ID&gt;
+  &lt;/Year&gt;
+  &lt;Year&gt;
+    &lt;ID&gt;2021&lt;/ID&gt;
+  &lt;/Year&gt;
+  &lt;Year&gt;
+    &lt;ID&gt;2022&lt;/ID&gt;
+  &lt;/Year&gt;
+  &lt;Year&gt;
+    &lt;ID&gt;2023&lt;/ID&gt;
+  &lt;/Year&gt;
+  &lt;Year&gt;
+    &lt;ID&gt;2024&lt;/ID&gt;
+  &lt;/Year&gt;
+  &lt;Year&gt;
+    &lt;ID&gt;2025&lt;/ID&gt;
+  &lt;/Year&gt;
+
+&lt;/Years&gt;
+&lt;/XmlData&gt;
+&lt;/Query&gt;</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="ID">
+        <DataField>ID</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
