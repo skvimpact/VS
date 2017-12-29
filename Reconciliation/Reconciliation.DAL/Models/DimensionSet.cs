@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Data.Common;
+using Script_Executor;
 
 namespace Reconciliation.DAL
 {
 
-    public class DimensionSet : IComparable<DimensionSet>
+    public class DimensionSet : IComparable<DimensionSet>, IMappable<DimensionSet>
     {
         public string D1 { get; set; }
         public string D2 { get; set; }
@@ -35,45 +37,6 @@ namespace Reconciliation.DAL
         public string D28 { get; set; }
         public string D29 { get; set; }
         public string D30 { get; set; }
-
-/*        public DimensionSet(string D1 = "",  string D2 = "",  string D3 = "",  string D4 = "",  string D5 = "",
-                            string D6 = "",  string D7 = "",  string D8 = "",  string D9 = "",  string D10 = "",
-                            string D11 = "", string D12 = "", string D13 = "", string D14 = "", string D15 = "",
-                            string D16 = "", string D17 = "", string D18 = "", string D19 = "", string D20 = "",
-                            string D21 = "", string D22 = "", string D23 = "", string D24 = "", string D25 = "",
-                            string D26 = "", string D27 = "", string D28 = "", string D29 = "", string D30 = "")
-        {
-            this.D1 = D1;
-            this.D2 = D2;
-            this.D3 = D3;
-            this.D4 = D4;
-            this.D5 = D5;
-            this.D6 = D6;
-            this.D7 = D7;
-            this.D8 = D8;
-            this.D9 = D9;
-            this.D10 = D10;
-            this.D11 = D11;
-            this.D12 = D12;
-            this.D13 = D13;
-            this.D14 = D14;
-            this.D15 = D15;
-            this.D16 = D16;
-            this.D17 = D17;
-            this.D18 = D18;
-            this.D19 = D19;
-            this.D20 = D20;
-            this.D21 = D21;
-            this.D22 = D22;
-            this.D23 = D23;
-            this.D24 = D24;
-            this.D25 = D25;
-            this.D26 = D26;
-            this.D27 = D27;
-            this.D28 = D28;
-            this.D29 = D29;
-            this.D30 = D30;
-        }*/
 
         public int CompareTo(DimensionSet other)
         {
@@ -271,6 +234,44 @@ namespace Reconciliation.DAL
                 }
             }
             return false;
+        }
+
+        public DimensionSet GetFromDbDataReader(DbDataReader dr, String[] consts)
+        {
+            int _off = -1;
+            return new DimensionSet
+            {
+                D1 = consts[0],
+                D30 = consts[1],
+                D2  = (string)(dr[1 + _off] ?? ""),
+                D3  = (string)(dr[2 + _off] ?? ""),
+                D4  = (string)(dr[3 + _off] ?? ""),
+                D5  = (string)(dr[4 + _off] ?? ""),
+                D6  = (string)(dr[5 + _off] ?? ""),
+                D7  = (string)(dr[6 + _off] ?? ""),
+                D8  = (string)(dr[7 + _off] ?? ""),
+                D9  = (string)(dr[8 + _off] ?? ""),
+                D10 = (string)(dr[9 + _off] ?? ""),
+                D11 = (string)(dr[10 + _off] ?? ""),
+                D12 = (string)(dr[11 + _off] ?? ""),
+                D13 = (string)(dr[12 + _off] ?? ""),
+                D14 = (string)(dr[13 + _off] ?? ""),
+                D15 = (string)(dr[14 + _off] ?? ""),
+                D16 = (string)(dr[15 + _off] ?? ""),
+                D17 = (string)(dr[16 + _off] ?? ""),
+                D18 = (string)(dr[17 + _off] ?? ""),
+                D19 = (string)(dr[18 + _off] ?? ""),
+                D20 = (string)(dr[19 + _off] ?? ""),
+                D21 = (string)(dr[20 + _off] ?? ""),
+                D22 = (string)(dr[21 + _off] ?? ""),
+                D23 = (string)(dr[22 + _off] ?? ""),
+                D24 = (string)(dr[23 + _off] ?? ""),
+                D25 = (string)(dr[24 + _off] ?? ""),
+                D26 = (string)(dr[25 + _off] ?? ""),
+                D27 = (string)(dr[26 + _off] ?? ""),
+                D28 = (string)(dr[27 + _off] ?? ""),
+                D29 = (string)(dr[28 + _off] ?? "")
+            };
         }
     }
 }

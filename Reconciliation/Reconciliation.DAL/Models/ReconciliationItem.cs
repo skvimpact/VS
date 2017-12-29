@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
-
+using System.Reflection;
 namespace Reconciliation.DAL
 {
     [DataContract(Name = "RI", Namespace = "")]
@@ -131,6 +131,16 @@ namespace Reconciliation.DAL
                 this.R3 = rightMeasureSet.M3;
                 this.R4 = rightMeasureSet.M4;
             }
+        }
+        public string Del()
+        {
+            Type t1 = typeof(ReconciliationItem);
+           // t.
+            ReconciliationItemCaption i = null;
+            t1 = i.GetType();
+            Type t = typeof(ReconciliationItemCaption);
+            //Assembly containingAssembly = new Assembly(t);
+            return "";
         }
 
         public int CompareTo(ReconciliationItem other)

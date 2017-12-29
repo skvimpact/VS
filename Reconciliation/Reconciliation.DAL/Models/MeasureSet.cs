@@ -1,8 +1,9 @@
 ﻿using System;
-
+using System.Data.Common;
+using Script_Executor;
 namespace Reconciliation.DAL
 {
-    public class MeasureSet
+    public class MeasureSet : IMappable<MeasureSet>
     {
         static double delta = 0.009f;
 
@@ -13,7 +14,7 @@ namespace Reconciliation.DAL
 
         public bool IsNull()
         {
-               
+
             if (
                  Math.Abs(M1) < delta
               && Math.Abs(M2) < delta
@@ -27,7 +28,7 @@ namespace Reconciliation.DAL
         }
 
         public override bool Equals(Object obj)
-        {            
+        {
             if (obj is MeasureSet && obj != null)
             {
                 MeasureSet temp = (MeasureSet)obj;
@@ -46,6 +47,18 @@ namespace Reconciliation.DAL
                 }
             }
             return false;
+        }
+
+        public MeasureSet GetFromDbDataReader(DbDataReader dr, String[] consts)
+        {
+            int _off = 27;
+            return new MeasureSet
+            {
+                M1 = (double)(dr[1 + _off] ?? 0.0),
+                M2 = (double)(dr[1 + _off] ?? 0.0),
+                M3 = (double)(dr[1 + _off] ?? 0.0),
+                M4 = (double)(dr[1 + _off] ?? 0.0)
+            };
         }
     }
 }

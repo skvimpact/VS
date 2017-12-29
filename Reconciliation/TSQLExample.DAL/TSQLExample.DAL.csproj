@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,18 +41,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mappers\TSQLScriptMapper.cs" />
     <Compile Include="Model\Company.cs" />
+    <Compile Include="Model\CompanyAndConsts.cs" />
     <Compile Include="Model\TD_CRM_Accrual_Storno_LED.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repos\OFF.cs" />
+    <Compile Include="OFF.cs" />
+    <Compile Include="Service References\RF_Resources\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="TSQL Scripts\TSQLScriptBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TSQL Script Executor\Script Executor.csproj">
+    <ProjectReference Include="..\Script Executor\Script Executor.csproj">
       <Project>{61fa532b-6da8-458c-b7a5-f4a945604fee}</Project>
       <Name>Script Executor</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RF_Resources\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RF_Resources\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RF_Resources\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RF_Resources\RFResourceController.wsdl" />
+    <None Include="Service References\RF_Resources\TSQLExample.DAL.RF_Resources.ConnectionStringSettings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\RF_Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RF_Resources\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RF_Resources\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RF_Resources\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RF_Resources\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

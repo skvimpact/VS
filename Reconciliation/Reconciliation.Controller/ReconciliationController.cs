@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 
 using Reconciliation.DAL;
+using Logger;
 
 namespace Reconciliation.Controller
 {
@@ -13,6 +14,7 @@ namespace Reconciliation.Controller
     {
         public string PrepareData(int year, int month)
         {
+            //Log4Net.Log.Info("Вызов подготовки");
             return NAVOFF.PrepareData(year, month);
         }
 

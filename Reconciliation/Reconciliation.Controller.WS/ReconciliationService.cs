@@ -22,6 +22,8 @@ namespace Reconciliation.Controller.WS
 
         protected override void OnStart(string[] args)
         {
+        //    Log4Net.InitLogger();
+
             if (myHost != null)
             {
                 myHost.Close();

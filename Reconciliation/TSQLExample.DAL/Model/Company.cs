@@ -1,14 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.Common;
+using Script_Executor;
 
 namespace TSQLExample.DAL
 {
-    public class Company : IComparable<Company>
+    public class Company : IComparable<Company>, IMappable<Company>
     {
         public string name { get; set; }
+
+        public Company()
+        {
+            this.name = "DUMMY";
+        }
 
         public Company(string name)
         {
@@ -43,5 +46,9 @@ namespace TSQLExample.DAL
             return this.name.GetHashCode();
         }
 
+        public Company GetFromDbDataReader(DbDataReader dr, String[] consts)
+        {
+            return new Company((string)dr[0]);
+        }
     }
 }

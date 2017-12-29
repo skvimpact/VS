@@ -32,8 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,17 +56,62 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\RF_Resources\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="log4net.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\RF_Resources\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RF_Resources\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RF_Resources\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RF_Resources\Reconciliation.Controller.WS.RF_Resources.ConnectionStringSettings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RF_Resources\RFResourceController.wsdl" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{ba3ad68a-d8bf-4a5a-83fb-6e65a8b82127}</Project>
+      <Name>Logger</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Reconciliation.Controller\Reconciliation.Controller.csproj">
       <Project>{310e6127-e228-4149-b598-61f0c8f1ca60}</Project>
       <Name>Reconciliation.Controller</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\RF_Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RF_Resources\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RF_Resources\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RF_Resources\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RF_Resources\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
@@ -71,6 +121,11 @@ xcopy "$(AssemblyName).exe.config" "C:\Reconciliation" /Y
 xcopy "$(AssemblyName).dll" "C:\Reconciliation" /Y
 xcopy "$(AssemblyName).pdb" "C:\Reconciliation" /Y
 xcopy "$(AssemblyName).exe" "C:\Reconciliation" /Y
+
+
+
+xcopy "Logger.dll" "C:\Reconciliation" /Y
+xcopy "Logger.pdb" "C:\Reconciliation" /Y
 
 
 xcopy "Script Executor.dll" "C:\Reconciliation" /Y

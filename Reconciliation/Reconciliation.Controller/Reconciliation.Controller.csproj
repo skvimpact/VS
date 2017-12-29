@@ -58,13 +58,19 @@
     <Compile Include="ReconciliationController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{ba3ad68a-d8bf-4a5a-83fb-6e65a8b82127}</Project>
+      <Name>Logger</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Reconciliation.DAL\Reconciliation.DAL.csproj">
       <Project>{4386ff24-9832-493d-b9b4-4147778efb4a}</Project>
       <Name>Reconciliation.DAL</Name>

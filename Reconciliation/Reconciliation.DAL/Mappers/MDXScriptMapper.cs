@@ -6,12 +6,7 @@ namespace Reconciliation.DAL
 
     public class MDXScriptMapper
     {
-        static public Account getAccountByDbDataReader(DbDataReader dr)
-        {
-            return (new Account(name: (string)dr[0]));
-        }
-
-        static public DimensionSet getDimensionSetByDbDataReader(DbDataReader dr, String[] args)
+       static public DimensionSet getDimensionSetByDbDataReader(DbDataReader dr, String[] args)
         {
             int _off = -1;
             return (new DimensionSet

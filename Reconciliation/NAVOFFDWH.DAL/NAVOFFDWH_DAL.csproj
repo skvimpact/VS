@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{323ACBAD-E94E-4FE6-87CD-29F189AD89C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NAVOFFDWH_DAL</RootNamespace>
+    <AssemblyName>NAVOFFDWH_DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBObjects\ControlTable.cs" />
+    <Compile Include="DBObjectItems\ControlTableItem.cs" />
+    <Compile Include="DBObjectItems\CompanyDimItem.cs" />
+    <Compile Include="DBObjectItems\DBObjectItem.cs" />
+    <Compile Include="DBObjectItems\DimItem.cs" />
+    <Compile Include="DwhControllerService\ControlTableOld.cs" />
+    <Compile Include="DBObjects\CompanyDim.cs" />
+    <Compile Include="DBObjects\DBObject.cs" />
+    <Compile Include="DwhControllerService\DwhControllerService.cs" />
+    <Compile Include="DwhControllerService\ControlledObject.cs" />
+    <Compile Include="Dim.cs" />
+    <Compile Include="Fact.cs" />
+    <Compile Include="FactN.cs" />
+    <Compile Include="Models.cs" />
+    <Compile Include="Dwh.cs" />
+    <Compile Include="DwhControllerService\PieceOfWork.cs" />
+    <Compile Include="DwhControllerService\ObjectRegister.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScriptService.cs" />
+    <Compile Include="DBObjects\TypicalDim.cs" />
+    <Compile Include="DBObjectItems\TypicalDimItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BulkInserter\BulkInserter.csproj">
+      <Project>{5bf25f24-3321-43eb-af66-7ed7df828b68}</Project>
+      <Name>BulkInserter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Script Executor\Script Executor.csproj">
+      <Project>{61fa532b-6da8-458c-b7a5-f4a945604fee}</Project>
+      <Name>Script Executor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

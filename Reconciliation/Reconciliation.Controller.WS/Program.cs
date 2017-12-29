@@ -5,6 +5,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
+//using Logger;
 namespace Reconciliation.Controller.WS
 {
     static class Program
@@ -14,6 +15,7 @@ namespace Reconciliation.Controller.WS
         /// </summary>
         static void Main()
         {
+            
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
             { 
